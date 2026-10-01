@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set 7 Q1 - Contact Form</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:720px;margin:30px auto;padding:0 16px;line-height:1.5}label{display:block;margin-top:10px}input,textarea{padding:6px;width:100%;box-sizing:border-box}button{margin-top:12px;padding:8px 16px;cursor:pointer}table{border-collapse:collapse;width:100%}th,td{border:1px solid #444;padding:8px;text-align:left}th{background:#eee}#out,#msg{margin-top:14px;font-weight:bold}
+</style>
+</head>
+<body>
+<h2>Contact Us</h2>
+<form id="cf">
+<label>Name <input type="text" id="name" required></label>
+<label>Email <input type="email" id="email" required></label>
+<label>Phone <input type="tel" id="phone" pattern="[0-9]{10}" title="Enter a 10-digit number" required></label>
+<label>Message <textarea id="message" rows="4" required></textarea></label>
+<button type="submit">Submit</button>
+</form>
+<p id="msg"></p>
+<script>
+document.getElementById('cf').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('msg').textContent = 'Thank you, ' + document.getElementById('name').value + '! Your message has been received.';
+});
+</script>
+</body>
+</html>

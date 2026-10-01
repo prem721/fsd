@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set 11 Q2 - Add Two Numbers</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:720px;margin:30px auto;padding:0 16px;line-height:1.5}label{display:block;margin-top:10px}input,textarea{padding:6px;width:100%;box-sizing:border-box}button{margin-top:12px;padding:8px 16px;cursor:pointer}table{border-collapse:collapse;width:100%}th,td{border:1px solid #444;padding:8px;text-align:left}th{background:#eee}#out,#msg{margin-top:14px;font-weight:bold}
+</style>
+</head>
+<body>
+<h2>Add Two Numbers</h2>
+<button id="btn">Enter Numbers</button>
+<script>
+function addNumbers() {
+  const a = prompt('Enter the first number:');
+  if (a === null) return;
+  const b = prompt('Enter the second number:');
+  if (b === null) return;
+  const x = Number(a), y = Number(b);
+  if (a.trim() === '' || b.trim() === '' || isNaN(x) || isNaN(y)) {
+    alert('Please enter valid numbers.');
+    return;
+  }
+  alert('Sum = ' + (x + y));
+}
+document.getElementById('btn').addEventListener('click', addNumbers);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set 15 Q1 - Email Validation</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:720px;margin:30px auto;padding:0 16px;line-height:1.5}label{display:block;margin-top:10px}input,textarea{padding:6px;width:100%;box-sizing:border-box}button{margin-top:12px;padding:8px 16px;cursor:pointer}table{border-collapse:collapse;width:100%}th,td{border:1px solid #444;padding:8px;text-align:left}th{background:#eee}#out,#msg{margin-top:14px;font-weight:bold}
+</style>
+</head>
+<body>
+<h2>Email Validator</h2>
+<label>Enter email <input type="text" id="inp" placeholder="name@example.com"></label>
+<button id="btn">Validate</button>
+<p id="out"></p>
+<script>
+function isValidEmail(email) {
+  const regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+  return regex.test(email);
+}
+document.getElementById('btn').addEventListener('click', function () {
+  const v = document.getElementById('inp').value.trim();
+  const out = document.getElementById('out');
+  const ok = isValidEmail(v);
+  out.textContent = ok ? 'Valid email address' : 'Invalid email address';
+  out.style.color = ok ? 'green' : 'red';
+});
+console.log(isValidEmail('test@example.com'), isValidEmail('bad@email'));
+</script>
+</body>
+</html>

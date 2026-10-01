@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set 10 Q2 - Driving Age</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:720px;margin:30px auto;padding:0 16px;line-height:1.5}label{display:block;margin-top:10px}input,textarea{padding:6px;width:100%;box-sizing:border-box}button{margin-top:12px;padding:8px 16px;cursor:pointer}table{border-collapse:collapse;width:100%}th,td{border:1px solid #444;padding:8px;text-align:left}th{background:#eee}#out,#msg{margin-top:14px;font-weight:bold}
+</style>
+</head>
+<body>
+<h2>Can you drive?</h2>
+<button id="btn">Enter Age</button>
+<script>
+function checkAge() {
+  const input = prompt('Enter your age:');
+  if (input === null) return;
+  const age = Number(input);
+  if (input.trim() === '' || isNaN(age) || age < 0) {
+    alert('Please enter a valid age.');
+  } else if (age >= 18) {
+    alert('You are old enough to drive.');
+  } else {
+    alert('You are not old enough to drive.');
+  }
+}
+document.getElementById('btn').addEventListener('click', checkAge);
+</script>
+</body>
+</html>

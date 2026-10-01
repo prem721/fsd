@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Raja Babu Kurra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Raja Babu Kurra</h1>
+<p>Computer Science Engineering Student</p>
+</header>
+<section>
+<h2>About Me</h2>
+<p>CSE student at Vasavi College of Engineering, Hyderabad, interested in backend systems, AI/ML integration into practical applications, and competitive programming.</p>
+</section>
+<section>
+<h2>Education</h2>
+<table>
+<tr><th>Degree</th><th>Institution</th><th>University</th></tr>
+<tr><td>B.E. Computer Science Engineering</td><td>Vasavi College of Engineering, Hyderabad</td><td>Osmania University</td></tr>
+</table>
+</section>
+<section>
+<h2>Skills</h2>
+<ul>
+<li>Python</li>
+<li>FastAPI</li>
+<li>LangChain / LangGraph</li>
+<li>AWS Bedrock</li>
+<li>HTML, CSS, JavaScript</li>
+</ul>
+</section>
+<section>
+<h2>Contact Form</h2>
+<form id="cf">
+<label>Name <input type="text" id="name" required></label>
+<label>Email <input type="email" id="email" required></label>
+<label>Message <textarea id="message" rows="4" required></textarea></label>
+<button type="submit">Send</button>
+</form>
+<p id="msg"></p>
+</section>
+<script>
+document.getElementById('cf').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('msg').textContent = 'Thanks, ' + document.getElementById('name').value + '! Message sent.';
+});
+</script>
+</body>
+</html>
